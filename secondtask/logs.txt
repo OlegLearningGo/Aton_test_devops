@@ -1,0 +1,55 @@
+user@user:~/secondtask$ curl -vk https://localhost:5555
+* Host localhost:5555 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:5555...
+* Connected to localhost (::1) port 5555
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / x25519 / RSASSA-PSS
+* ALPN: server accepted http/1.1
+* Server certificate:
+*  subject: CN=localhost
+*  start date: May 13 13:29:15 2025 GMT
+*  expire date: Jun 12 13:29:15 2025 GMT
+*  issuer: CN=localhost
+*  SSL certificate verify result: self-signed certificate (18), continuing anyway.
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: localhost:5555
+> User-Agent: curl/8.9.1
+> Accept: */*
+> 
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+< HTTP/1.1 200 OK
+< Server: nginx/1.27.5
+< Date: Thu, 15 May 2025 18:03:30 GMT
+< Content-Type: text/html
+< Content-Length: 222
+< Last-Modified: Tue, 13 May 2025 11:49:41 GMT
+< Connection: keep-alive
+< ETag: "682331d5-de"
+< Accept-Ranges: bytes
+< 
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello, Nginx!</title>
+</head>
+<body>
+    <h1>Hello, Nginx!</h1>
+    <p>We have just configured our Nginx web server on Ubuntu Server!</p>
+</body>
+</html>
+* Connection #0 to host localhost left intact
