@@ -4,7 +4,7 @@
 URL="smtps://smtp.mail.ru"
 SMTP_PORT="465"
 USER_LOGIN="LOGIN"
-USER_PASSWORD=PASSWORD"
+USER_PASSWORD="PASSWORD"
 # data of letter
 FROM_EMAIL="vasilev-oleg02@mail.ru"
 MAIL_RESPONSE="vasilev-oleg02@mail.ru"
