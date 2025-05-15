@@ -1,0 +1,76 @@
+Host smtp.mail.ru:465 was resolved.
+* IPv6: 2a00:1148:1000:101:5:3:0:33
+* IPv4: 217.69.139.160, 94.100.180.160
+*   Trying 217.69.139.160:465...
+* Connected to smtp.mail.ru (217.69.139.160) port 465
+} [5 bytes data]
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+*  CAfile: /etc/ssl/certs/ca-certificates.crt
+*  CApath: /etc/ssl/certs
+{ [5 bytes data]
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+{ [61 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [3822 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [300 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [37 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256 / x25519 / RSASSA-PSS
+* Server certificate:
+*  subject: C=RU; ST=Moscow; L=Moscow; O=VK LLC; CN=*.mail.ru
+*  start date: Oct 24 13:41:03 2024 GMT
+*  expire date: Nov 25 13:41:02 2025 GMT
+*  subjectAltName: host "smtp.mail.ru" matched cert's "*.mail.ru"
+*  issuer: C=BE; O=GlobalSign nv-sa; CN=GlobalSign RSA OV SSL CA 2018
+*  SSL certificate verify ok.
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 1: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+*   Certificate level 2: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+{ [5 bytes data]
+< 220 smtp.mail.ru ESMTP ready (Looking for Mail for your domain? Visit https://biz.mail.ru)
+} [5 bytes data]
+> EHLO user
+{ [5 bytes data]
+< 250-smtp.mail.ru
+< 250-SIZE 73400320
+< 250-8BITMIME
+< 250-DSN
+< 250-SMTPUTF8
+< 250 AUTH PLAIN LOGIN XOAUTH2
+} [5 bytes data]
+> AUTH PLAIN
+{ [5 bytes data]
+< 334 
+} [5 bytes data]
+> AHZhc2lsZXYtb2xlZzAyQG1haWwucnUAanlUenM4NmlRak52ZkZaWEpLSzc=
+{ [5 bytes data]
+< 235 Authentication succeeded
+} [5 bytes data]
+> MAIL FROM:<vasilev-oleg02@mail.ru>
+{ [5 bytes data]
+< 250 OK
+} [5 bytes data]
+> RCPT TO:<vasilev-oleg02@mail.ru>
+{ [5 bytes data]
+< 250 Accepted
+} [5 bytes data]
+> DATA
+{ [5 bytes data]
+< 354 Enter message, ending with "." on a line by itself
+} [5 bytes data]
+* upload completely sent off: 136 bytes
+{ [5 bytes data]
+< 250 OK id=1uFcdE-00000000AVL-349d
+100   136    0     0    0   136      0    181 --:--:-- --:--:-- --:--:--   181
+* Connection #0 to host smtp.mail.ru left intact
+Sending letter is ok
