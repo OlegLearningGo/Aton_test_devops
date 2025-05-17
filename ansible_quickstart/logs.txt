@@ -1,0 +1,28 @@
+PLAY [conf nginx] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Install Nginx (Debian/Ubuntu)] *******************************************
+changed: [localhost]
+
+TASK [connect index.html] ******************************************************
+changed: [localhost]
+
+TASK [nginx conf] **************************************************************
+changed: [localhost]
+
+TASK [start nginx] *************************************************************
+ok: [localhost]
+
+TASK [check port 80] ***********************************************************
+ok: [localhost]
+
+TASK [status http] *************************************************************
+ok: [localhost]
+
+RUNNING HANDLER [restart nginx] ************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=8    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  

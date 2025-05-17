@@ -1,0 +1,52 @@
+- name: conf nginx
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install Nginx (Debian/Ubuntu)
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+      when: ansible_os_family == 'Debian'
+
+    - name: connect index.html
+      copy:
+        src: ./index.html
+        dest: ./index.html
+        mode: '0644'
+
+    - name: nginx conf
+      copy:
+        src: ./nginx.conf
+        dest: /etc/nginx/sites-available/default
+        mode: '0644'
+      notify: restart nginx
+
+    - name: start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: check port 80
+      wait_for:
+        port: 80
+        timeout: 10
+      when: ansible_connection != 'local'
+
+    - name: status http
+      uri:
+        url: "http://{{ ansible_host }}"
+        return_content: yes
+        status_code: 200
+      register: nginx_test
+      until: nginx_test.status == 200
+      retries: 5
+      delay: 2
+
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted
